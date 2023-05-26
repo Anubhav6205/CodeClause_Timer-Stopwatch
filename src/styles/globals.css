@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+/*NAVBAR*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffff2;
+  padding: 10px;
+
+  padding:1rem 2rem .8rem 2rem;
+  
+}
+
+.logo img {
+  height: 40px;
+}
+
+.options {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.options li {
+  margin-left: 15px;
+}
+
+.options li:first-child {
+  margin-left: 0;
+}
+
+.options li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 0 1rem 1.5rem 0;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.options li a:hover {
+  border-bottom-color: #32312f;
+}
+
+.options li.active  {
+  border-bottom-color: #ff8a36;
+  font-weight: bold;
+}
+
+
+
+
+/*CLOCK*/
+
+.clock-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: rgb(238, 232, 232);
+
+}
+
+.clock-body .container {
+  position: relative;
+
+}
+
+
+.clock-body .container .clock {
+  border-radius: 50%;
+  background-color: rgb(28, 24, 24);
+  height: 22rem;
+  width: 22rem;
+  border: 2px solid rgba(87, 81, 81, 0.5);
+  box-shadow: 0px 0px 20px rgb(77, 77, 77);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-body .container .clock span {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:white;
+}
+
+
+.clock::before {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  height: .5rem;
+  width: .5rem;
+  border-radius: 50%;
+
+}
+
+.clock-body .container .clock .hand {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+.clock-body .container .clock .hand i {
+  position: absolute;
+  background-color: var(--clr);
+  width: 4px;
+  height: var(--hgt);
+  transform: rotate(calc(30deg*var(--i)));
+  border-radius: 25%;
+
+
+}
+
+
+/*STOPWATCH*/
+
+
+.stopwatch-body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: rgb(238, 232, 232);
+  box-shadow: 0 0 0 25px white;
+}
+
+.stopwatch-body .container {
+  display: flex;
+  align-items: center;
+
+  width: 600px;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 20px rgb(64, 51, 51);
+  border: 1px solid rgb(79, 74, 74);
+  overflow: hidden;
+  height:250px;
+
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+  padding: 20px;
+    height:100%;
+}
+
+.left-side {
+  background-color: #292929;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+}
+
+.left-side .stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.left-side .stopwatch span {
+  margin: 0 5px;
+}
+
+.left-side .buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.left-side .buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.left-side .buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.right-side {
+  background-color: #f9f9f9;
+}
+
+.right-side .marked-times {
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.right-side .marked-times div {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-side .marked-times div:hover {
+  background-color: #f3f3f3;
+}
+
+.right-side .marked-times div:last-child {
+  border-bottom: none;
+}
+
+.right-side .marked-times div:hover {
+  background-color: #f3f3f3;
+}
+
+.right-side .marked-times div:last-child {
+  border-bottom: none;
+}
+
+
+/*TIMER*/
+
+
+.timer-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: rgb(238, 232, 232);
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+  background: #3e3e3e;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  
+}
+
+.shake{
+  animation-duration: 0.5s;
+  animation-name: shake;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.watch {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.watch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(110, 88, 88, 0.896);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  background-color: #000;
+  z-index: 1;
+}
+
+.hour-hand {
+  width: 5px;
+  height: 80px;
+  margin-top: -80px;
+  margin-left: -4px;
+  border-radius: 8px 8px 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  background-color: rgb(207, 13, 13);
+}
+
+.minute-hand {
+  width: 4px;
+  height: 110px;
+  margin-top: -110px;
+  margin-left: -3px;
+  border-radius: 6px 6px 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  background-color: rgb(31, 57, 255);
+}
+
+.second-hand {
+  width: 3px;
+  height: 130px;
+  margin-top: -130px;
+  margin-left: -1px;
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.container-button {
+  margin-top: 2rem;
+}
+
+.timer-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.timer-input {
+  width: 50px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 14px;
+  outline: none;
+  background-color: #f5f5f5;
+  color: #333333;
+  transition: background-color 0.3s ease;
+}
+
+.timer-input:focus {
+  background-color: #eaeaea;
+}
+
+.timer-input::placeholder {
+  color: #999999;
+}
+
+.timer-button {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timer-button:hover {
+  background-color: #f96650;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.buttons .timer-button {
+  margin: 0 1rem;
+}
