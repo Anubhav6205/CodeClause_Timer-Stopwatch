@@ -2,6 +2,8 @@ Timesync
 
 Timesync is a simple Next.js-based web application that provides a range of time-related features to enhance your productivity and time management. With a clean and intuitive interface, it offers an analog clock, a timer component, and a stopwatch.
 
+Check it out => https://fabulous-axolotl-1ce674.netlify.app/
+
 Features:
 
 1. Analog Clock: The landing page showcases an analog clock with hour, minute, and second hands, providing an aesthetically pleasing and functional display of the current time.
